@@ -18,7 +18,23 @@ export default {
         ],
       },
     ],
-    '@semantic-release/release-notes-generator',
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'angular',
+        presetConfig: {
+          types: [
+            { type: 'feat', section: 'Features' },
+            { type: 'fix', section: 'Bug Fixes' },
+            { type: 'perf', section: 'Performance Improvements' },
+            { type: 'refactor', section: 'Code Refactoring' },
+            { type: 'chore', section: 'Chores' },
+            { type: 'docs', section: 'Documentation' },
+            { type: 'test', hidden: true }
+          ]
+        }
+      }
+    ],
     '@semantic-release/npm',
     '@semantic-release/github',
   ]
